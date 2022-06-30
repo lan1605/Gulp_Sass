@@ -1,0 +1,82 @@
+.people{
+	padding: 10rem 0 3rem;
+	background: linear-gradient(to bottom,rgba(white, 0.8),rgba(white,0.8)),
+		url("../images/img-people-bg.png") 
+		no-repeat center/cover;
+	&-list{
+		margin-top: 5.5rem;
+		display: flex;
+		align-items: stretch;
+		justify-content: space-between;
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: 0 4rem;
+	}
+	&-item{
+		width: calc(50% - 4rem);
+		margin-bottom: 7rem;
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		flex-direction: row;
+	}
+	&-avatar{
+		width: 11.5rem;
+		height: 11.5rem;
+		border-radius: 100rem;
+		object-fit: cover;
+		flex-shrink: 0;
+	}
+	&-info{
+		padding-left: 3rem;
+	}
+	&-name{
+		text-transform: uppercase;
+		font-size: 2rem;
+		margin-bottom: 1.5rem;
+		font-weight: 500;
+	}
+	&-desc{
+		@include font(1.5rem,300,normal);
+		color: $text-color;
+		line-height: 1.4;
+	}
+	&-job{
+		@include font(1.5rem,bold,italic);
+		display: inline-block;
+		margin-bottom: 2rem;
+		padding-bottom: 2rem;
+		color: $title-color;
+		position: relative;
+		&::after{
+			content: "";
+			width: 6.5rem;
+			height: 0.4rem;
+			@include bg($primary-color);
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+	}
+	@include maxWidth(1023px)
+	{
+		padding: 5rem 0 1rem;
+		&-item{
+			width: 100%;
+			margin-bottom: 4rem;
+
+		}
+	}
+	@include maxWidth(767px)
+	{
+		&-list{
+			padding: 0;
+			margin-top: 6rem;
+		}
+		&-avatar{
+			width: 8rem;
+			height: 8rem;
+		}
+	}
+
+}

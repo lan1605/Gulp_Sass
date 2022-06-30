@@ -1,0 +1,100 @@
+.team{
+	background-color: #fff;
+	padding: 10rem 0;
+	&-list{
+		display: flex;
+		align-items: stretch;
+		justify-content: center;
+		flex-direction: row;
+	}
+	&-image{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	&-item{
+		width: calc(33.3% - 3rem);
+	}
+	&-social{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row;
+		&-link{
+			width: 6rem;
+			height: 6rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: row;
+			color: $primary-color;
+			font-size: 2rem;
+			transition: all 0.2s linear;
+			@include bg($secondary-color);
+			&:hover{
+				color: white;
+				@include bg($primary-color);
+			}
+		}
+		&-item:not(:first-child){
+			border-left: 1px solid $primary-color;
+		}
+	}
+	@include hoverEffect(".team-main",".team-content");
+	// &-main{
+	// 	position: relative;
+	// 	z-index: 1;
+	// 	transition: transform 0.25s linear;
+	// 	&::after{
+	// 		content: "";
+	// 		position: absolute;
+	// 		top: 0;
+	// 		left: 0;
+	// 		width: 100%;
+	// 		height: 100%;
+	// 		background-color: $third-color;
+	// 		z-index: -1;
+	// 		transition: transform 0.3s linear;
+	// 	}
+	// }
+	&-info{ 
+		padding: 3rem 1.5rem;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column;
+	}
+	&-name{
+		text-transform: uppercase;
+		margin-bottom: 1.5rem;
+		font-weight: bolder;
+		line-height: 1.4;
+	}
+	&-position{
+		font-size: 1.5rem;
+		font-weight: 300;
+		font-style: italic;
+		color: $text-color;
+	}
+	@include maxWidth(1023px){
+		padding: 5rem 0;
+		&-list{
+			@include touchSlider(55%);
+		}
+	}
+	@include maxWidth(767px){
+		&-list{
+			@include touchSlider(100%);
+		}
+	}
+}
+.brand{
+	background-color: $gray-color;
+	padding: 8rem 0;
+	align-items: center;
+	@include maxWidth(767px)
+	{
+		padding: 3rem 0;
+	}
+}

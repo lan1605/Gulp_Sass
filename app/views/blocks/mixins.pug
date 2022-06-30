@@ -1,0 +1,126 @@
+mixin menuLink(title, href)
+	li.header-menu-item 
+		a.header-menu-link(href=href)= title
+mixin itemList(number, text)
+	.header-bottom-item
+		span.header-bottom-number= number
+		span.header-bottom-text= text
+mixin blockBox(caption, title, desc)
+	.block-box
+		h3.block-box-caption=caption 
+		h2.block-box-heading=title 
+		if desc 
+				p.block-box-desc=desc 
+//- data={
+//- 	image:" ",
+//- 	title:" "
+//- }
+mixin itemImage(data)
+	.about-item 
+		img.about-image(src=data.image)
+		.about-content 
+			i.fa.fa-users.about-icon
+			span.about-title=data.title
+mixin itemNumber(number, text)
+		.number-item 
+			h4.number-item-count=number 
+			span.number-item-text=text
+mixin blockService(icon,text, desc)
+		.box-list 
+			img.box-list-icon(src=icon)
+			.box-info
+				h4.box-info-title=text
+				.box-info-desc=desc
+mixin blockWedo(src,title,icon,content)
+		.wedo-item
+				.wedo-item-header 
+					img(src=src).wedo-item-icon
+					h3.wedo-item-title=title
+					i.wedo-item-arrow(class=icon)
+				.wedo-item-content
+					.wedo-item-inner=content
+mixin teamItem(image,title="",desc="")
+	.team-item 
+		.team-main
+			img.team-image(src=image)
+			.team-content
+				ul.team-social
+					li.team-social-item 
+						a.team-social-link(href="#")
+							i.fab.fa-facebook-f.team-icon
+					li.team-social-item 
+						a.team-social-link(href="#")
+							i.fab.fa-twitter.team-icon
+					li.team-social-item 
+						a.team-social-link(href="#")
+							i.fab.fa-pinterest.team-icon
+					li.team-social-item 
+						a.team-social-link(href="#")
+							i.fab.fa-instagram.team-icon
+		.team-info
+			h3.team-name=title
+			span.team-position=desc
+//- mixin teamSocial(fb="#", twitter="#", pinterest="#",instagram="#"){
+//- 	ul.team-social
+//- 					li.team-social-item 
+//- 						a.team-social-link(href=fb)
+//- 							i.fab.fa-facebook-f.team-icon
+//- 					li.team-social-item 
+//- 						a.team-social-link(href=twitter)
+//- 							i.fab.fa-twitter.team-icon
+//- 					li.team-social-item 
+//- 						a.team-social-link(href=pinterest)
+//- 							i.fab.fa-pinterest.team-icon
+//- 					li.team-social-item 
+//- 						a.team-social-link(href=instagram)
+//- 							i.fab.fa-instagram.team-icon
+//- }
+mixin workItem(src,icon,title="Creatively designed",desc="Lorem ipsum dolor sit")
+	.work-item 
+		img.work-image(src=src)
+		.work-content 
+			img.work-icon(src=icon)
+			h3.work-title=title 
+			span.work-desc=desc
+mixin peopleItem(src,name,job,desc)
+	.people-item 
+		img.people-avatar(src=src)
+		.people-info 
+			h3.people-name=name
+			span.people-job=job
+			p.people-desc=desc
+
+mixin storyItem(src,date_number,text,title,desc,meta_number1,meta_number2)
+	.story-item 	
+		.story-media 
+			img.story-image(src=src)
+			.story-date 	
+				span.story-date-number=date_number
+				span.story-date-text=text
+		h3.story-title=title  
+		.story-desc
+			p.story-desc-text=desc
+		.story-meta  
+			.story-meta-item 	
+				i.fa.fa-eye.story-meta-icon 
+				span.story-meta-number=meta_number1
+			.story-meta-item 	
+				i.fa.fa-comment.story-meta-icon 
+				span.story-meta-number=meta_number2
+mixin footerItem(src,title,time) 
+	a.footer-blog(href="#")
+		img.footer-blog-image(src=src)
+		.footer-blog-info 
+			h4.footer-blog-title=title
+			span.footer-blog-date=time
+mixin quoteItem(src,type=false,desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis numquam nam perferendis? Totam minus, ducimus libero eum nesciunt rerum nostrum id illo dolor hic natus quae architecto consequuntur aspernatur porro.",author="Jon Dee")
+	.quote-content
+		if type == false
+			.quote-icon
+				img(src=src)
+		else 
+			.quote-image
+				img(src=src)
+		.quote-info 
+			p.quote-desc=desc
+			span.quote-author=author
